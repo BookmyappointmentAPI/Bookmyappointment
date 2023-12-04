@@ -1,7 +1,7 @@
 
 const { MongoClient } = require('mongodb');
 const url = 'mongodb://127.0.0.1:27017';
-const database_Name = 'book_my_appointment';
+const database_Name = process.env.MONGODB_URI
 const client = new MongoClient(url);
 
 async function dbconnection() {

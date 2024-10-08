@@ -1,3 +1,4 @@
+
 const express = require('express');
 const nodemailer = require("nodemailer")
 require('./models/mongo_config');
@@ -16,6 +17,8 @@ const bcrypt = require('bcrypt');
 const port = process.env.PORT || 3000;
 const bodyParser = require('body-parser');
 const { log, count } = require('console');
+
+const DB = "mongodb+srv://Bookmyappointment:TYh8mzC0RDf50sDH@cluster0.s2rgisc.mongodb.net/prductuction_db require('dotenv').config()"
 
 // Configure body-parser to handle JSON data
 app.use(bodyParser.json());

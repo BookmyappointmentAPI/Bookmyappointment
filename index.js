@@ -24,7 +24,7 @@ const DB = "mongodb+srv://Bookmyappointment:TYh8mzC0RDf50sDH@cluster0.s2rgisc.mo
 app.use(bodyParser.json());
 // Recieved Data From CrossHeader...........................
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: ['http://localhost:3000', 'http://localhost:3001'], 
   optionsSuccessStatus: 200, // Some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 app.use(cors(corsOptions));
@@ -58,7 +58,7 @@ app.post('/register', async (req, res) => {
 //Login API Heare for User Login.............................
 //...........................................................
 app.post('/login', async (req, res) => {
-
+console.log(req.body)
   const { Phone_Number, Password } = req.body;
   try {
 
@@ -305,7 +305,7 @@ app.post('/appointment_history', async (req, res) => {
   // Define your filter query as an object
   const filter = {
     $or: [
-      { Register_phone: filters.Register_phone },
+      // { Register_phone: filters.Register_phone },
       { booking_Id: filters.booking_Id }
     ]
   };
